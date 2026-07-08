@@ -1,0 +1,30 @@
+{
+  "name": "bumi-website",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "preflight": "node scripts/bumi-preflight.mjs",
+    "typecheck": "nuxt typecheck",
+    "lint": "nuxt typecheck",
+    "verify": "npm run preflight && npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "@nuxt/image": "^2.0.0",
+    "gsap": "^3.15.0",
+    "nuxt": "^4.4.8",
+    "swiper": "^14.0.1",
+    "vue": "^3.5.39",
+    "vue-router": "^5.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.2",
+    "@types/node": "^26.1.0",
+    "tailwindcss": "^4.3.2",
+    "vue-tsc": "^3.3.6"
+  }
+}

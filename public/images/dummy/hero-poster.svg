@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1020"/>
+      <stop offset="0.6" stop-color="#071026"/>
+      <stop offset="1" stop-color="#0066FF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="25%" cy="70%" r="60%">
+      <stop offset="0" stop-color="#2D78FF" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#2D78FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <g stroke="#C8CCD4" stroke-opacity="0.13" stroke-width="1">
+    <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600"/>
+    <path d="M160 0V900M320 0V900M480 0V900M640 0V900M800 0V900M960 0V900M1120 0V900M1280 0V900M1440 0V900"/>
+  </g>
+  <g fill="none" stroke="#2D78FF" stroke-opacity="0.45" stroke-width="3">
+    <path d="M-80 780C260 620 390 590 680 640S1110 600 1680 260"/>
+    <path d="M-120 680C210 540 520 530 780 560S1190 500 1700 160" opacity="0.5"/>
+  </g>
+  <text x="1020" y="710" font-family="Poppins,Arial" font-size="360" font-weight="700" fill="#FFFFFF" opacity="0.045">B</text>
+</svg>
