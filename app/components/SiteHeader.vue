@@ -12,6 +12,7 @@
             class="nav-trigger"
             :class="{ 'is-active': activeMenu === item.label }"
             type="button"
+            :aria-label="`${activeMenu === item.label ? 'Close' : 'Open'} ${item.label} menu`"
             :aria-expanded="activeMenu === item.label"
             :aria-controls="megaId(item.label)"
             @click="toggleMenu(item.label)"
@@ -96,6 +97,9 @@
           <label class="sr-only" for="site-search-input">Search query</label>
           <input id="site-search-input" v-model="searchQuery" class="search-input" type="search" placeholder="Try “Digital Infrastructure” or “Leadership”" />
           <div class="search-results" aria-live="polite">
+            <div v-if="!filteredSearchResults.length" class="search-empty">
+              No matching Bumi pages found. Try services, leadership, fintech, or AI.
+            </div>
             <NuxtLink v-for="result in filteredSearchResults" :key="result.href" :to="result.href" @click="closeAll">
               <span>{{ result.label }}</span>
               <small>{{ result.category }}</small>
@@ -123,6 +127,19 @@ const megaId = (label: string) => `mega-${label.toLowerCase().replace(/[^a-z0-9]
 const searchItems = computed(() => navigation.flatMap((item) => [
   { label: `${item.label} overview`, href: item.href, category: item.label },
   ...item.groups.flatMap((group) => group.links.map((link) => ({ ...link, category: `${item.label} · ${group.title}` }))),
+]).concat([
+  { label: 'Manufacturing ERP', href: '/solutions/future-ready-digital-infrastructure', category: 'Capabilities' },
+  { label: 'Education System', href: '/solutions/smart-operations', category: 'Capabilities' },
+  { label: 'Clinic & Beauty Management', href: '/solutions/secure-platforms', category: 'Capabilities' },
+  { label: 'Hotel Management', href: '/solutions/smart-operations', category: 'Capabilities' },
+  { label: 'Restaurant Management', href: '/solutions/smart-operations', category: 'Capabilities' },
+  { label: 'Laundry Management', href: '/services/operational-systems', category: 'Capabilities' },
+  { label: 'Outsourcing Management', href: '/services/operational-systems', category: 'Capabilities' },
+  { label: 'Franchise Management', href: '/projects/operational-modernization', category: 'Capabilities' },
+  { label: 'BPR / Fintech System', href: '/solutions/secure-platforms', category: 'Capabilities' },
+  { label: 'AI Digital Employee', href: '/solutions/data-intelligence', category: 'Capabilities' },
+  { label: 'Privacy Policy', href: '/privacy', category: 'Legal' },
+  { label: 'Terms of Use', href: '/terms', category: 'Legal' },
 ]))
 
 const filteredSearchResults = computed(() => {

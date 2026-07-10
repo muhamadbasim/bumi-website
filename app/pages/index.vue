@@ -56,7 +56,7 @@
           <NuxtLink class="arrow-link" to="/insights">All insights <span>→</span></NuxtLink>
         </div>
         <div class="news-list reveal">
-          <NuxtLink v-for="item in insights" :key="item.title" to="/insights" class="news-item">
+          <NuxtLink v-for="item in insights" :key="item.title" :to="item.href" class="news-item">
             <div class="news-meta">{{ item.category }} · {{ item.type }} · {{ item.date }}</div>
             <h3>{{ item.title }}</h3>
             <span class="news-arrow">→</span>
@@ -117,6 +117,7 @@
                 <li v-for="benefit in capability.benefits" :key="benefit">{{ benefit }}</li>
               </ul>
             </div>
+            <NuxtLink class="capability-cta" :to="capability.href">Explore solution <span>→</span></NuxtLink>
           </article>
         </div>
       </div>
