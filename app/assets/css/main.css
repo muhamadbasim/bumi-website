@@ -151,25 +151,12 @@ button, input { font: inherit; }
 .capability-card h3 { min-height: 58px; margin:0 0 8px; font-size: clamp(20px, 1.55vw, 28px); line-height:1.04; letter-spacing:-.045em; }
 .capability-subtitle { margin:0 0 14px; color: var(--accent); font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:.08em; }
 .capability-description { margin:0 0 18px; color: var(--color-muted); line-height:1.58; font-size:13px; }
-.capability-visual { height:128px; margin: auto 0 18px; border:1px solid rgba(255,255,255,.09); border-radius:18px; position:relative; overflow:hidden; background: radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--accent) 38%, transparent), transparent 30%), linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); }
-.capability-visual::before { content:""; position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px); background-size:26px 26px; mask-image: linear-gradient(to bottom, rgba(0,0,0,.75), transparent); }
-.capability-visual::after { content:""; position:absolute; width:150px; height:150px; right:-44px; bottom:-58px; border-radius:50%; border:1px solid color-mix(in srgb, var(--accent) 56%, transparent); box-shadow:0 0 42px color-mix(in srgb, var(--accent) 26%, transparent); }
-.workflow-visual { display:grid; align-content:center; }
-.workflow-orbit { position:absolute; inset:18px 18px auto; height:44px; border-radius:999px; border:1px solid color-mix(in srgb, var(--accent) 35%, rgba(255,255,255,.08)); background: linear-gradient(90deg, rgba(255,255,255,.035), color-mix(in srgb, var(--accent) 14%, transparent), rgba(255,255,255,.035)); }
-.workflow-orbit::before { content:""; position:absolute; left:13%; right:13%; top:50%; height:2px; transform:translateY(-50%); background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 38%, white), var(--accent)); box-shadow:0 0 18px var(--accent); animation: workflowGlow 2.8s ease-in-out infinite; }
-.workflow-orbit span { position:absolute; top:50%; width:12px; height:12px; border-radius:50%; transform:translate(-50%, -50%); background:#fff; border:2px solid var(--accent); box-shadow:0 0 18px var(--accent); }
-.workflow-orbit span:nth-child(1) { left:13%; animation: nodePulse 2.8s ease-in-out infinite; }
-.workflow-orbit span:nth-child(2) { left:42%; animation: nodePulse 2.8s ease-in-out .45s infinite; }
-.workflow-orbit span:nth-child(3) { left:70%; animation: nodePulse 2.8s ease-in-out .9s infinite; }
-.workflow-orbit span:nth-child(4) { left:87%; width:8px; height:8px; opacity:.55; animation: nodePulse 2.8s ease-in-out 1.25s infinite; }
-.workflow-steps { position:relative; z-index:2; display:grid; grid-template-columns: repeat(3, 1fr); gap:6px; margin:70px 10px 0; }
-.workflow-steps span { min-height:28px; display:grid; place-items:center; border:1px solid color-mix(in srgb, var(--accent) 34%, rgba(255,255,255,.08)); border-radius:999px; color:white; background:rgba(5,8,19,.68); font-size:10px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; box-shadow: inset 0 0 18px color-mix(in srgb, var(--accent) 12%, transparent); }
-.workflow-pulse { position:absolute; z-index:1; width:3px; height:3px; border-radius:50%; background:var(--accent); box-shadow:0 0 12px var(--accent); animation: workflowParticle 3.6s linear infinite; }
-.workflow-pulse:nth-of-type(1) { left:8%; top:24%; animation-delay:0s; }
-.workflow-pulse:nth-of-type(2) { left:18%; top:72%; animation-delay:.7s; }
-.workflow-pulse:nth-of-type(3) { left:42%; top:18%; animation-delay:1.4s; }
-.workflow-pulse:nth-of-type(4) { left:66%; top:76%; animation-delay:2.1s; }
-.workflow-pulse:nth-of-type(5) { left:88%; top:32%; animation-delay:2.8s; }
+.capability-photo { aspect-ratio: 4 / 3; margin: auto 0 18px; border: 1px solid color-mix(in srgb, var(--accent) 34%, rgba(255,255,255,.08)); border-radius: 18px; overflow: hidden; position: relative; background: #0b1020; }
+.capability-photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 48%, rgba(5,8,19,.68) 100%), linear-gradient(135deg, color-mix(in srgb, var(--accent) 22%, transparent), transparent 62%); }
+.capability-photo img { width: 100%; height: 100%; display: block; object-fit: cover; transform: scale(1.001); transition: transform .45s ease, filter .45s ease; }
+.capability-card:hover .capability-photo img, .capability-card:focus-within .capability-photo img { transform: scale(1.045); filter: saturate(1.08) contrast(1.04); }
+.capability-card:focus-within { border-color: color-mix(in srgb, var(--accent) 70%, white 10%); box-shadow: 0 28px 88px color-mix(in srgb, var(--accent) 20%, rgba(0,0,0,.42)); }
+.capability-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 4px; }
 .capability-features { display:grid; gap:8px; margin-bottom:18px; }
 .capability-features span { color: var(--color-silver); font-size:12px; line-height:1.35; padding-left:18px; position:relative; }
 .capability-features span::before { content:""; position:absolute; left:0; top:.55em; width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 14px var(--accent); }
@@ -182,9 +169,6 @@ button, input { font: inherit; }
 .capability-cta span { color:var(--accent); transition: transform .22s ease; }
 .capability-cta:hover span { transform: translateX(5px); }
 @keyframes dataFlow { from { transform:translateX(0); } to { transform:translateX(340%); } }
-@keyframes workflowGlow { 0%,100% { opacity:.45; filter:brightness(.8); } 50% { opacity:1; filter:brightness(1.4); } }
-@keyframes nodePulse { 0%,100% { transform:translate(-50%, -50%) scale(.82); opacity:.62; } 50% { transform:translate(-50%, -50%) scale(1.22); opacity:1; } }
-@keyframes workflowParticle { from { transform:translateX(-8px) translateY(0); opacity:0; } 18% { opacity:1; } 78% { opacity:1; } to { transform:translateX(62px) translateY(-20px); opacity:0; } }
 
 .cta { min-height: 62vh; display:grid; place-items:center; text-align:center; background: radial-gradient(circle at 50% 0%, rgba(45,120,255,.26), transparent 42%), #070B16; border-block: 1px solid var(--color-line); }
 .cta h2 { font-size: clamp(42px, 6vw, 86px); line-height:.98; letter-spacing:-.06em; margin: 14px auto 20px; max-width: 920px; }

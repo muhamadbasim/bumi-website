@@ -35,3 +35,18 @@ test('all capability images exist locally', () => {
     assert.ok(existsSync(join(root, 'public', image.slice(1))), `missing ${image}`)
   }
 })
+
+test('homepage renders accessible photographic capability cards', () => {
+  const page = readFileSync(join(root, 'app/pages/index.vue'), 'utf8')
+  const css = readFileSync(join(root, 'app/assets/css/main.css'), 'utf8')
+
+  assert.match(page, /<NuxtImg/)
+  assert.match(page, /:src="capability\.image"/)
+  assert.match(page, /:alt="capability\.imageAlt"/)
+  assert.match(page, /loading="lazy"/)
+  assert.match(page, /class="capability-photo"/)
+  assert.doesNotMatch(page, /workflow-orbit/)
+  assert.match(css, /\.capability-photo img/)
+  assert.match(css, /object-fit:\s*cover/)
+  assert.match(css, /\.capability-card:focus-within/)
+})
