@@ -8,6 +8,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "test:capabilities": "node --test scripts/capabilities.test.mjs",
     "postinstall": "nuxt prepare",
     "preflight": "node scripts/bumi-preflight.mjs",
     "typecheck": "nuxt typecheck",
