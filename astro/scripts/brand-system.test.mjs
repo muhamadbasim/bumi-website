@@ -11,21 +11,18 @@ const publicBrandDir = path.resolve(currentDir, '../public/brand')
 const repoRoot = path.resolve(currentDir, '../..')
 const gitignorePath = path.join(repoRoot, '.gitignore')
 
-test('BrandLogo keeps the expected wrapper and accessible image semantics', () => {
+test('BrandLogo keeps the expected wrapper and default light-image alt contract', () => {
   const componentSource = readFileSync(componentPath, 'utf8')
 
   assert.match(componentSource, /const\s*\{\s*alt\s*=\s*'Bumi'/)
   assert.match(componentSource, /<span\s+class:list=\{\['brand-logo',\s*className\]\}>/)
   assert.match(componentSource, /src="\/brand\/bumi-logo-app-light\.svg"[\s\S]*?alt=\{alt\}/)
-  assert.match(componentSource, /src="\/brand\/bumi-logo-app-dark\.svg"[\s\S]*?alt=""[\s\S]*?aria-hidden="true"/)
 })
 
-test('BrandLogo renders the official app mark assets with accessible alt text', () => {
+test('BrandLogo keeps the decorative dark-image accessibility contract', () => {
   const componentSource = readFileSync(componentPath, 'utf8')
 
-  assert.match(componentSource, /\/brand\/bumi-logo-app-light\.svg/)
-  assert.match(componentSource, /\/brand\/bumi-logo-app-dark\.svg/)
-  assert.match(componentSource, /alt=\{alt\}/)
+  assert.match(componentSource, /src="\/brand\/bumi-logo-app-dark\.svg"[\s\S]*?alt=""[\s\S]*?aria-hidden="true"/)
 })
 
 test('review artifacts stay out of Git tracking', () => {
