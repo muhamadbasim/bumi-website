@@ -20,7 +20,7 @@
 
 ---
 
-### Task 1: Define and test the photographic capability data contract
+### Task 1: Define the data contract and create ten industry photographs
 
 **Files:**
 - Create: `scripts/capabilities.test.mjs`
@@ -149,14 +149,7 @@ Run: `npm run test:capabilities`
 
 Expected: the metadata test passes and the asset test fails with `missing /images/capabilities/manufacturing.webp` as the first missing path.
 
-- [ ] **Step 5: Commit the tested data contract**
-
-```bash
-git add scripts/capabilities.test.mjs package.json app/data/capabilities.ts
-git commit -m "test: define capability photography contract"
-```
-
-### Task 2: Create and validate ten local industry photographs
+#### Phase B: Create and validate ten local industry photographs
 
 **Files:**
 - Create: `public/images/capabilities/manufacturing.webp`
@@ -210,7 +203,7 @@ git add public/images/capabilities
 git commit -m "feat: add capability industry photography"
 ```
 
-### Task 3: Replace the abstract workflow visual with the editorial photo card
+### Task 2: Replace the abstract workflow visual with the editorial photo card
 
 **Files:**
 - Modify: `app/pages/index.vue`
@@ -332,7 +325,7 @@ git add app/pages/index.vue app/assets/css/main.css scripts/capabilities.test.mj
 git commit -m "feat: redesign capability cards with industry photos"
 ```
 
-### Task 4: Verify responsive behavior, accessibility, and production build
+### Task 3: Verify responsive behavior, accessibility, and production build
 
 **Files:**
 - Modify if needed: `app/assets/css/main.css`
@@ -340,7 +333,7 @@ git commit -m "feat: redesign capability cards with industry photos"
 - Modify if needed: `scripts/capabilities.test.mjs`
 
 **Interfaces:**
-- Consumes: completed capability data, assets, markup, and styles from Tasks 1–3.
+- Consumes: completed capability data, assets, markup, and styles from Tasks 1–2.
 - Produces: a validated five/two/one-column capability section with stable crops and no homepage regressions.
 
 - [ ] **Step 1: Run the complete automated verification suite**
