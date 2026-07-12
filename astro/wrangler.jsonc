@@ -3,5 +3,8 @@
   "name": "bumi-astro-preview",
   "compatibility_date": "2026-07-12",
   "compatibility_flags": ["nodejs_compat"],
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  "routes": [
+    { "pattern": "bumi.basim.id", "custom_domain": true }
+  ]
 }
