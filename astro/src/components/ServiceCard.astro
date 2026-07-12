@@ -1,13 +1,16 @@
 ---
-interface Props { number: string; title: string; text: string; accent: string }
-const { number, title, text, accent } = Astro.props
+interface Props { number: string; title: string; subtitle: string; text: string; accent: string; image: string; imageAlt: string; href: string; features: string[]; benefits: string[] }
+const { number, title, subtitle, text, accent, image, imageAlt, href, features, benefits } = Astro.props
 ---
-<article class={"service-card " + accent} data-reveal data-service-card>
-  <div class="card-number">{number}</div>
-  <div class="card-visual"><span></span><span></span><span></span></div>
+<article class="service-card" style={`--accent:${accent}`} data-reveal>
+  <div class="capability-card-top"><span class="card-number">{number}</span><span class="capability-dot" aria-hidden="true"></span></div>
   <div class="card-copy">
     <h3>{title}</h3>
-    <p>{text}</p>
-    <a href="/services" aria-label={'Explore ' + title}>Explore <span>↗</span></a>
+    <p class="capability-subtitle">{subtitle}</p>
+    <p class="capability-description">{text}</p>
   </div>
+  <div class="capability-features">{features.map((feature) => <span>{feature}</span>)}</div>
+  <figure class="capability-photo"><img src={image} alt={imageAlt} width="1200" height="900" loading="lazy" decoding="async" /></figure>
+  <div class="capability-benefits"><strong>Business Impact</strong><ul>{benefits.map((benefit) => <li>{benefit}</li>)}</ul></div>
+  <div class="capability-action"><a href={href} aria-label={'Explore ' + title}>Explore solution <span>↗</span></a></div>
 </article>

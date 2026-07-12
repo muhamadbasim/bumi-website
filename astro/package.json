@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "test:brand": "node --test scripts/brand-system.test.mjs",
+    "test:capabilities": "node --test scripts/capability-cards.test.mjs",
     "typecheck": "astro check",
     "deploy": "astro build && wrangler deploy",
     "verify": "npm run typecheck && npm run build"
