@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 64" fill="none" role="img" aria-label="Bumi logo variations">
+  <defs>
+    <linearGradient id="silver" x1="14" y1="8" x2="55" y2="55" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#c8ccd4"/></linearGradient>
+    <linearGradient id="blue" x1="30" y1="35" x2="55" y2="55" gradientUnits="userSpaceOnUse"><stop stop-color="#2d78ff"/><stop offset="1" stop-color="#0066ff"/></linearGradient>
+  </defs>
+  <g transform="translate(0)"><rect width="64" height="64" rx="14" fill="#0b1020"/><path d="M14 8h24l13 13-10 10 13 12-15 13H14V8Z" fill="url(#silver)"/><path d="M25 17h11l6 6-7 7H25V17Zm0 19h13l6 7-8 7H25V36Z" fill="#0b1020"/><path d="m40 34 14 9-15 13H25l15-22Z" fill="url(#blue)"/></g>
+  <g transform="translate(64)"><rect width="64" height="64" rx="14" fill="#fff"/><path d="M14 8h24l13 13-10 10 13 12-15 13H14V8Z" fill="#0b1020"/><path d="M25 17h11l6 6-7 7H25V17Zm0 19h13l6 7-8 7H25V36Z" fill="#fff"/><path d="m40 34 14 9-15 13H25l15-22Z" fill="#0066ff"/></g>
+  <g transform="translate(128)"><path d="M14 8h24l13 13-10 10 13 12-15 13H14V8Z" fill="url(#silver)"/><path d="M25 17h11l6 6-7 7H25V17Zm0 19h13l6 7-8 7H25V36Z" fill="#0b1020"/><path d="m40 34 14 9-15 13H25l15-22Z" fill="url(#blue)"/></g>
+  <g transform="translate(192)"><path d="M14 8h24l13 13-10 10 13 12-15 13H14V8Z" fill="currentColor"/><path d="M25 17h11l6 6-7 7H25V17Zm0 19h13l6 7-8 7H25V36Z" fill="currentColor"/><path d="m40 34 14 9-15 13H25l15-22Z" fill="currentColor"/></g>
+</svg>
