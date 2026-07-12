@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Bumi monochrome logo">
+  <path d="M14 8h24l13 13-10 10 13 12-15 13H14V8Z" fill="currentColor"/>
+  <path d="M25 17h11l6 6-7 7H25V17Zm0 19h13l6 7-8 7H25V36Z" fill="currentColor"/>
+  <path d="m40 34 14 9-15 13H25l15-22Z" fill="currentColor"/>
+</svg>
