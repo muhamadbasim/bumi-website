@@ -10,6 +10,8 @@ const componentPath = path.resolve(currentDir, '../src/components/BrandLogo.astr
 const headerPath = path.resolve(currentDir, '../src/components/SiteHeader.astro')
 const homePagePath = path.resolve(currentDir, '../src/pages/index.astro')
 const globalStylesPath = path.resolve(currentDir, '../src/styles/global.css')
+const layoutPath = path.resolve(currentDir, '../src/layouts/BaseLayout.astro')
+const loaderPath = path.resolve(currentDir, '../src/components/BrandLoader.astro')
 const publicBrandDir = path.resolve(currentDir, '../public/brand')
 const repoRoot = path.resolve(currentDir, '../..')
 const gitignorePath = path.join(repoRoot, '.gitignore')
@@ -39,6 +41,15 @@ test('site chrome and global theme reference the official Bumi identity assets a
   assert.match(globalStylesSource, /family=Poppins:wght@400;500;600;700/)
   assert.match(globalStylesSource, /--brand-midnight:#0b1020/i)
   assert.match(globalStylesSource, /\.brand-logo\s*\{/)
+})
+
+test('layout exposes Bumi document metadata and bounded loader', () => {
+  const layout = readFileSync(layoutPath, 'utf8')
+  const loader = readFileSync(loaderPath, 'utf8')
+  assert.match(layout, /rel="icon" href="\/brand\/bumi-logo-app-dark\.svg"/)
+  assert.match(layout, /property="og:image" content="https:\/\/bumi\.basim\.id\/brand\/bumi-social-card\.svg"/)
+  assert.match(layout, /<BrandLoader\s*\/>/)
+  assert.match(loader, /1200/)
 })
 
 test('review artifacts stay out of Git tracking', () => {

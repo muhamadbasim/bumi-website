@@ -1,0 +1,9 @@
+{
+  "name": "Bumi",
+  "short_name": "Bumi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1020",
+  "theme_color": "#0B1020",
+  "icons": [{ "src": "/brand/bumi-logo-app-dark.svg", "sizes": "64x64", "type": "image/svg+xml" }]
+}
