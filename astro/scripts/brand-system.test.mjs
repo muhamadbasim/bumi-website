@@ -7,6 +7,9 @@ import { execFileSync } from 'node:child_process'
 
 const currentDir = path.dirname(fileURLToPath(import.meta.url))
 const componentPath = path.resolve(currentDir, '../src/components/BrandLogo.astro')
+const headerPath = path.resolve(currentDir, '../src/components/SiteHeader.astro')
+const homePagePath = path.resolve(currentDir, '../src/pages/index.astro')
+const globalStylesPath = path.resolve(currentDir, '../src/styles/global.css')
 const publicBrandDir = path.resolve(currentDir, '../public/brand')
 const repoRoot = path.resolve(currentDir, '../..')
 const gitignorePath = path.join(repoRoot, '.gitignore')
@@ -23,6 +26,19 @@ test('BrandLogo keeps the decorative dark-image accessibility contract', () => {
   const componentSource = readFileSync(componentPath, 'utf8')
 
   assert.match(componentSource, /src="\/brand\/bumi-logo-app-dark\.svg"[\s\S]*?alt=""[\s\S]*?aria-hidden="true"/)
+})
+
+test('site chrome and global theme reference the official Bumi identity assets and tokens', () => {
+  const headerSource = readFileSync(headerPath, 'utf8')
+  const homePageSource = readFileSync(homePagePath, 'utf8')
+  const globalStylesSource = readFileSync(globalStylesPath, 'utf8')
+
+  assert.match(headerSource, /import\s+BrandLogo\s+from\s+'\.\/BrandLogo\.astro'/)
+  assert.match(headerSource, /<BrandLogo\s+alt=""\s*\/>/)
+  assert.match(homePageSource, /<BrandLogo\s+alt="Bumi"\s*\/>/)
+  assert.match(globalStylesSource, /family=Poppins:wght@400;500;600;700/)
+  assert.match(globalStylesSource, /--brand-midnight:#0b1020/i)
+  assert.match(globalStylesSource, /\.brand-logo\s*\{/)
 })
 
 test('review artifacts stay out of Git tracking', () => {
