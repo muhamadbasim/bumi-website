@@ -23,6 +23,7 @@ jobs:
           cache: npm
           cache-dependency-path: astro/package-lock.json
       - run: npm ci
+      - run: node --test scripts/astro-config.test.mjs
       - run: npm run test:brand
       - run: npm run typecheck
       - run: npm run build

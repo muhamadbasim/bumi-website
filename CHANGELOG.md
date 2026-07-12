@@ -17,6 +17,3 @@
 
 ### Verification
 - Run `npm run verify` before release/push.
-# Changelog
-
-Releases follow [Conventional Commits](https://www.conventionalcommits.org/) and Semantic Versioning. GitHub Release Please maintains this file from commits merged into `main`.

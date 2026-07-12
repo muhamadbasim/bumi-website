@@ -47,9 +47,10 @@ test('layout exposes Bumi document metadata and bounded loader', () => {
   const layout = readFileSync(layoutPath, 'utf8')
   const loader = readFileSync(loaderPath, 'utf8')
   assert.match(layout, /rel="icon" href="\/brand\/bumi-logo-app-dark\.svg"/)
-  assert.match(layout, /property="og:image" content="https:\/\/bumi\.basim\.id\/brand\/bumi-social-card\.svg"/)
+  assert.match(layout, /property="og:image" content="https:\/\/bumi\.basim\.id\/brand\/bumi-social-card\.png"/)
   assert.match(layout, /<BrandLoader\s*\/>/)
   assert.match(loader, /1200/)
+  assert.match(loader, /<noscript>/)
 })
 
 test('review artifacts stay out of Git tracking', () => {
