@@ -6,5 +6,6 @@ export default defineConfig({
   adapter: cloudflare(),
   vite: {
     build: { target: 'es2022' },
+    resolve: { tsconfigPaths: false },
   },
 })
