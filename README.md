@@ -1,5 +1,9 @@
 # Nuxt Minimal Starter
 
+## Astro production app
+
+The production Bumi site lives in [`astro/`](./astro). Pull requests must pass the GitHub Actions **Astro verification** check before merging to `main`; see [the delivery runbook](./docs/DELIVERY.md) for Cloudflare Builds, releases, previews, and rollback.
+
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
