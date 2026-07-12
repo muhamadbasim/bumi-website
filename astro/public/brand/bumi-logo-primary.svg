@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Bumi logo">
+  <defs>
+    <linearGradient id="silver" x1="14" y1="8" x2="55" y2="55" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff"/><stop offset="1" stop-color="#c8ccd4"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="30" y1="35" x2="55" y2="55" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2d78ff"/><stop offset="1" stop-color="#0066ff"/>
+    </linearGradient>
+  </defs>
+  <path d="M14 8h24l13 13-10 10 13 12-15 13H14V8Z" fill="url(#silver)"/>
+  <path d="M25 17h11l6 6-7 7H25V17Zm0 19h13l6 7-8 7H25V36Z" fill="#0b1020" fill-opacity=".92"/>
+  <path d="m40 34 14 9-15 13H25l15-22Z" fill="url(#blue)"/>
+</svg>

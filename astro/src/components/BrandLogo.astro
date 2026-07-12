@@ -1,0 +1,50 @@
+---
+interface Props {
+  alt?: string
+  class?: string
+}
+
+const { alt = 'Bumi', class: className = '' } = Astro.props
+---
+
+<span class:list={['brand-logo', className]}>
+  <img
+    class="brand-logo-image brand-logo-image-light"
+    src="/brand/bumi-logo-app-light.svg"
+    alt={alt}
+    decoding="async"
+  />
+  <img
+    class="brand-logo-image brand-logo-image-dark"
+    src="/brand/bumi-logo-app-dark.svg"
+    alt=""
+    aria-hidden="true"
+    decoding="async"
+  />
+</span>
+
+<style>
+  .brand-logo {
+    display: inline-grid;
+    place-items: center;
+  }
+
+  .brand-logo-image {
+    grid-area: 1 / 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .brand-logo-image-dark {
+    opacity: 0;
+  }
+
+  html[data-theme='dark'] .brand-logo-image-light {
+    opacity: 0;
+  }
+
+  html[data-theme='dark'] .brand-logo-image-dark {
+    opacity: 1;
+  }
+</style>

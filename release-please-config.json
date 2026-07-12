@@ -1,0 +1,8 @@
+{
+  "release-type": "node",
+  "packages": {
+    "astro": {}
+  },
+  "include-component-in-tag": false,
+  "include-v-in-tag": true
+}

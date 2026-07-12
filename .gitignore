@@ -25,3 +25,9 @@ logs
 
 # Temporary/generated media frames
 tmp/
+
+# Local Git worktrees
+.worktrees/
+
+# Local review artifacts
+.superpowers/

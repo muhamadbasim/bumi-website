@@ -1,6 +1,7 @@
 ---
 interface Props { title?: string; description?: string }
 const { title = 'Bumi — Built for the Future', description = 'Bumi creates trusted technology foundations for organizations ready to move with precision, confidence, and long-term vision.' } = Astro.props
+import BrandLoader from '../components/BrandLoader.astro'
 ---
 <!doctype html>
 <html lang="en">
@@ -8,6 +9,15 @@ const { title = 'Bumi — Built for the Future', description = 'Bumi creates tru
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#0B1020" />
+    <link rel="icon" href="/brand/bumi-logo-app-dark.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="canonical" href="https://bumi.basim.id/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://bumi.basim.id/brand/bumi-social-card.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <script is:inline>
       (() => {
         const savedTheme = localStorage.getItem('bumi-theme')
@@ -17,6 +27,7 @@ const { title = 'Bumi — Built for the Future', description = 'Bumi creates tru
     <title>{title}</title>
   </head>
   <body>
+    <BrandLoader />
     <slot />
   </body>
 </html>
