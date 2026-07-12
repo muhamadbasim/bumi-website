@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Abstract earth background">
+  <defs>
+    <radialGradient id="space" cx="72%" cy="42%" r="80%">
+      <stop offset="0" stop-color="#d9dce3"/>
+      <stop offset=".42" stop-color="#8d96a7"/>
+      <stop offset=".75" stop-color="#343a46"/>
+      <stop offset="1" stop-color="#111"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="38%" cy="32%">
+      <stop offset="0" stop-color="#fff" stop-opacity=".7"/>
+      <stop offset=".18" stop-color="#94a1b7" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#111" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="#111"/>
+  <circle cx="930" cy="370" r="420" fill="url(#space)" opacity=".88"/>
+  <circle cx="930" cy="370" r="420" fill="none" stroke="#dbe1ee" stroke-opacity=".25"/>
+  <circle cx="930" cy="370" r="350" fill="url(#glow)"/>
+</svg>

@@ -1,0 +1,9 @@
+---
+interface Props { number: string; title: string; tag: string; text: string }
+const { number, title, tag, text } = Astro.props
+---
+<a class="project-card" href="/projects" data-reveal>
+  <span class="project-number">{number}</span>
+  <div><p class="project-tag">{tag}</p><h3>{title}</h3><p>{text}</p></div>
+  <span class="project-arrow">↗</span>
+</a>

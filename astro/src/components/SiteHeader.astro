@@ -1,0 +1,50 @@
+---
+import ThemeToggle from './ThemeToggle.astro'
+---
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Bumi home"><span class="brand-mark">B</span><span>Bumi<span class="brand-dot">.</span></span></a>
+  <nav class="desktop-nav" aria-label="Primary navigation">
+    <a href="#services">Capabilities</a>
+    <a href="#projects">Projects</a>
+    <a href="#company">Company</a>
+    <a class="header-cta" href="/contact">Start a conversation <span>↗</span></a>
+  </nav>
+  <ThemeToggle />
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-menu-toggle><span></span><span></span><span></span></button>
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+    <a href="#services">Capabilities <span>↗</span></a>
+    <a href="#projects">Projects <span>↗</span></a>
+    <a href="#company">Company <span>↗</span></a>
+    <a href="/contact">Start a conversation <span>↗</span></a>
+  </div>
+</header>
+<script>
+  const toggle = document.querySelector('[data-menu-toggle]')
+  const menu = document.querySelector('[data-mobile-menu]')
+  const menuLabel = () => toggle?.setAttribute('aria-label', toggle?.getAttribute('aria-expanded') === 'true' ? 'Close menu' : 'Open menu')
+  const closeMenu = () => {
+    toggle?.setAttribute('aria-expanded', 'false')
+    menuLabel()
+    menu?.setAttribute('hidden', '')
+  }
+
+  // Always start closed after reload, route navigation, or browser back/forward.
+  closeMenu()
+
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true'
+    if (open) closeMenu()
+    else {
+      toggle.setAttribute('aria-expanded', 'true')
+      menuLabel()
+      menu?.removeAttribute('hidden')
+    }
+  })
+
+  menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu))
+  window.addEventListener('hashchange', closeMenu)
+  window.addEventListener('pageshow', closeMenu)
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu()
+  })
+</script>

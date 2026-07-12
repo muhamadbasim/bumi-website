@@ -1,0 +1,13 @@
+---
+interface Props { number: string; title: string; text: string; accent: string }
+const { number, title, text, accent } = Astro.props
+---
+<article class={"service-card " + accent} data-reveal data-service-card>
+  <div class="card-number">{number}</div>
+  <div class="card-visual"><span></span><span></span><span></span></div>
+  <div class="card-copy">
+    <h3>{title}</h3>
+    <p>{text}</p>
+    <a href="/services" aria-label={'Explore ' + title}>Explore <span>↗</span></a>
+  </div>
+</article>

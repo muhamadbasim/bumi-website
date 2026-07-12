@@ -1,0 +1,7 @@
+---
+interface Props { text: string }
+const { text } = Astro.props
+---
+<div class="marquee" aria-label={text} data-marquee>
+  <div class="marquee-track"><span>{text}</span><i>✦</i><span>{text}</span><i>✦</i><span>{text}</span><i>✦</i><span>{text}</span></div>
+</div>

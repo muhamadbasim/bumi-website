@@ -1,0 +1,22 @@
+---
+interface Props { title?: string; description?: string }
+const { title = 'Bumi — Built for the Future', description = 'Bumi creates trusted technology foundations for organizations ready to move with precision, confidence, and long-term vision.' } = Astro.props
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <script is:inline>
+      (() => {
+        const savedTheme = localStorage.getItem('bumi-theme')
+        document.documentElement.dataset.theme = savedTheme === 'dark' ? 'dark' : 'light'
+      })()
+    </script>
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
