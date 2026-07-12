@@ -28,3 +28,6 @@ tmp/
 
 # Local Git worktrees
 .worktrees/
+
+# Local review artifacts
+.superpowers/

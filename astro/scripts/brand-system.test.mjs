@@ -3,10 +3,22 @@ import assert from 'node:assert/strict'
 import { readFileSync, existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
+import { execFileSync } from 'node:child_process'
 
 const currentDir = path.dirname(fileURLToPath(import.meta.url))
 const componentPath = path.resolve(currentDir, '../src/components/BrandLogo.astro')
 const publicBrandDir = path.resolve(currentDir, '../public/brand')
+const repoRoot = path.resolve(currentDir, '../..')
+const gitignorePath = path.join(repoRoot, '.gitignore')
+
+test('BrandLogo keeps the expected wrapper and accessible image semantics', () => {
+  const componentSource = readFileSync(componentPath, 'utf8')
+
+  assert.match(componentSource, /const\s*\{\s*alt\s*=\s*'Bumi'/)
+  assert.match(componentSource, /<span\s+class:list=\{\['brand-logo',\s*className\]\}>/)
+  assert.match(componentSource, /src="\/brand\/bumi-logo-app-light\.svg"[\s\S]*?alt=\{alt\}/)
+  assert.match(componentSource, /src="\/brand\/bumi-logo-app-dark\.svg"[\s\S]*?alt=""[\s\S]*?aria-hidden="true"/)
+})
 
 test('BrandLogo renders the official app mark assets with accessible alt text', () => {
   const componentSource = readFileSync(componentPath, 'utf8')
@@ -14,6 +26,19 @@ test('BrandLogo renders the official app mark assets with accessible alt text', 
   assert.match(componentSource, /\/brand\/bumi-logo-app-light\.svg/)
   assert.match(componentSource, /\/brand\/bumi-logo-app-dark\.svg/)
   assert.match(componentSource, /alt=\{alt\}/)
+})
+
+test('review artifacts stay out of Git tracking', () => {
+  const gitignoreSource = readFileSync(gitignorePath, 'utf8')
+
+  assert.match(gitignoreSource, /^\.superpowers\/$/m)
+
+  const trackedFiles = execFileSync('git', ['ls-files', '.superpowers/sdd/task-1-report.md'], {
+    cwd: repoRoot,
+    encoding: 'utf8',
+  }).trim()
+
+  assert.equal(trackedFiles, '')
 })
 
 test('official Bumi logo assets exist in Astro public brand directory', () => {
