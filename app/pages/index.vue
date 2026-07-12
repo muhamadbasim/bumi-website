@@ -97,6 +97,10 @@
             <p class="capability-subtitle">{{ capability.subtitle }}</p>
             <p class="capability-description">{{ capability.description }}</p>
 
+            <div class="capability-features">
+              <span v-for="feature in capability.features" :key="feature">{{ feature }}</span>
+            </div>
+
             <figure class="capability-photo">
               <NuxtImg
                 :src="capability.image"
@@ -105,15 +109,10 @@
                 height="900"
                 format="webp"
                 loading="lazy"
-                sizes="100vw sm:50vw lg:20vw"
+                sizes="100vw sm:50vw xl:20vw"
                 :style="{ objectPosition: capability.imagePosition || 'center' }"
               />
-              <figcaption class="sr-only">{{ capability.imageAlt }}</figcaption>
             </figure>
-
-            <div class="capability-features">
-              <span v-for="feature in capability.features" :key="feature">{{ feature }}</span>
-            </div>
 
             <div class="capability-benefits">
               <strong>Business Impact</strong>

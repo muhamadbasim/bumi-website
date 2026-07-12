@@ -1,4 +1,19 @@
-export const capabilities = [
+interface Capability {
+  kicker: string
+  title: string
+  subtitle: string
+  description: string
+  icon: string
+  accent: string
+  image: string
+  imageAlt: string
+  imagePosition?: string
+  href: string
+  features: string[]
+  benefits: string[]
+}
+
+export const capabilities: Capability[] = [
   {
     kicker: '01',
     title: 'Manufacturing ERP',
@@ -8,10 +23,8 @@ export const capabilities = [
     accent: '#2D78FF',
     image: '/images/capabilities/manufacturing.webp',
     imageAlt: 'Engineer monitoring automated production equipment inside a modern manufacturing facility',
-    imagePosition: 'center',
     href: '/solutions/future-ready-digital-infrastructure',
     features: ['Production Planning', 'Inventory & Warehouse', 'Procurement', 'Quality Control', 'AI Forecasting'],
-    workflow: ['Plan', 'Produce', 'Monitor'],
     benefits: ['Higher productivity', 'Reduced operational cost', 'Real-time monitoring'],
   },
   {
@@ -23,10 +36,8 @@ export const capabilities = [
     accent: '#00BFA6',
     image: '/images/capabilities/education.webp',
     imageAlt: 'Students and instructor collaborating with digital learning displays in a modern classroom',
-    imagePosition: 'center',
     href: '/solutions/smart-operations',
     features: ['Student Information System', 'Learning Management System', 'Academic Management', 'Smart Attendance', 'Parent Portal'],
-    workflow: ['Enroll', 'Learn', 'Report'],
     benefits: ['Modern learning experience', 'Better academic management', 'Stronger parent engagement'],
   },
   {
@@ -38,10 +49,8 @@ export const capabilities = [
     accent: '#F25CA2',
     image: '/images/capabilities/clinic-beauty.webp',
     imageAlt: 'Healthcare professional consulting a patient in a clean contemporary clinic environment',
-    imagePosition: 'center',
     href: '/solutions/secure-platforms',
     features: ['Patient Management', 'Appointment Scheduling', 'Medical Records', 'Treatment History', 'CRM & Loyalty'],
-    workflow: ['Book', 'Treat', 'Retain'],
     benefits: ['Better patient experience', 'Increased retention', 'Operational efficiency'],
   },
   {
@@ -53,10 +62,8 @@ export const capabilities = [
     accent: '#D9A441',
     image: '/images/capabilities/hotel.webp',
     imageAlt: 'Premium hotel guest room prepared for connected hospitality operations',
-    imagePosition: 'center',
     href: '/solutions/smart-operations',
     features: ['Booking Engine', 'Front Office', 'Housekeeping', 'POS Integration', 'Revenue Management'],
-    workflow: ['Reserve', 'Serve', 'Optimize'],
     benefits: ['Better guest experience', 'Higher occupancy rate', 'Improved profitability'],
   },
   {
@@ -68,10 +75,8 @@ export const capabilities = [
     accent: '#FF7A1A',
     image: '/images/capabilities/restaurant.webp',
     imageAlt: 'Restaurant team operating a digital ordering system in a contemporary dining venue',
-    imagePosition: 'center',
     href: '/solutions/smart-operations',
     features: ['POS & Orders', 'Menu & Recipe', 'Kitchen Display System', 'Inventory Control', 'CRM & Loyalty'],
-    workflow: ['Order', 'Kitchen', 'Serve'],
     benefits: ['Faster service', 'Lower food cost', 'Better satisfaction'],
   },
   {
@@ -83,10 +88,8 @@ export const capabilities = [
     accent: '#00C2FF',
     image: '/images/capabilities/laundry.webp',
     imageAlt: 'Commercial laundry facility with modern connected washing machines and organized operations',
-    imagePosition: 'center',
     href: '/services/operational-systems',
     features: ['Order Management', 'Customer Membership', 'Pickup & Delivery', 'Machine Management', 'Billing & Payment'],
-    workflow: ['Pickup', 'Process', 'Deliver'],
     benefits: ['Operational efficiency', 'Better customer service', 'Increased profitability'],
   },
   {
@@ -98,10 +101,8 @@ export const capabilities = [
     accent: '#3A86FF',
     image: '/images/capabilities/outsourcing.webp',
     imageAlt: 'Professional service team working together in a modern operations center',
-    imagePosition: 'center',
     href: '/services/operational-systems',
     features: ['Employee Management', 'Attendance Tracking', 'Payroll', 'Contract Management', 'Performance Monitoring'],
-    workflow: ['Assign', 'Track', 'Pay'],
     benefits: ['Optimized workforce', 'Cost efficiency', 'Better service quality'],
   },
   {
@@ -113,10 +114,8 @@ export const capabilities = [
     accent: '#8B5CF6',
     image: '/images/capabilities/franchise.webp',
     imageAlt: 'Multi-location business manager reviewing connected franchise operations and outlet performance',
-    imagePosition: 'center',
     href: '/projects/operational-modernization',
     features: ['Outlet Management', 'Royalty & Fees', 'Supply Chain', 'Marketing Promotion', 'Sales Analytics'],
-    workflow: ['Launch', 'Control', 'Scale'],
     benefits: ['Business expansion', 'Standardized operations', 'Higher profitability'],
   },
   {
@@ -128,10 +127,8 @@ export const capabilities = [
     accent: '#0066FF',
     image: '/images/capabilities/fintech.webp',
     imageAlt: 'Financial services professional reviewing secure digital lending and analytics dashboards',
-    imagePosition: 'center',
     href: '/solutions/secure-platforms',
     features: ['Loan Management', 'Credit Analysis', 'Collection Management', 'Digital Approval', 'AI Credit Scoring'],
-    workflow: ['Apply', 'Score', 'Collect'],
     benefits: ['Faster approval process', 'Better risk management', 'Improved collection'],
   },
   {
@@ -143,10 +140,8 @@ export const capabilities = [
     accent: '#A855F7',
     image: '/images/capabilities/ai-workforce.webp',
     imageAlt: 'Human professional collaborating with an intelligent digital assistant in a futuristic workplace',
-    imagePosition: 'center',
     href: '/solutions/data-intelligence',
     features: ['AI Customer Service', 'Virtual Receptionist', 'AI Sales Assistant', 'AI HR Assistant', 'AI Data Analyst'],
-    workflow: ['Listen', 'Reason', 'Act'],
     benefits: ['24/7 availability', 'Reduced operational cost', 'Increased productivity'],
   },
 ]
